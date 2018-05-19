@@ -37,13 +37,17 @@ class Microwave {
 }
 
 public class Popcorn {
-
+	
+		
+	
 	private int kernels = 20;
 	private String flavor;
-
+	
 	Popcorn(String flavor) {
 		this.flavor = flavor;
 		System.out.println("Popcorn says: making package of " + this.flavor + " popcorn.");
+		
+
 	}
 
 
@@ -64,6 +68,18 @@ public class Popcorn {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	public static void main(String[] args) {
+		Popcorn pop = new Popcorn("Butter");
+		Microwave mic = new Microwave();
+		mic.putInMicrowave(pop);
+		mic.setTime(5);
+		mic.startMicrowave();
+		pop.applyHeat();
+		
+		
+		
+		
 	}
 	
 }
