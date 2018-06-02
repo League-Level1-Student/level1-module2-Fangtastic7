@@ -1,48 +1,90 @@
 package extra;
 
-
-
 public class TeaParty {
-	private String name;
-	private boolean isWoman;
-	private boolean isKnighted;
-	 public String welcome(String name, boolean isWoman, boolean isKnighted) {
-		getname();
-		checkisWoman();
-		checkisKnighted();
-		this.name = name;
-		return name;
+	private  String name;
+	private String hello = "Hello";
+	private String woman = " Ms. ";
+	private String man = " Mr. ";
+	private String knight = " Sir ";
+	public String welcome(String name, boolean isWoman, boolean isKnighted) {
 		
-		
-     }
-	   boolean checkisKnighted() {
-		if(this.name.equals("Orwell" )) {
-			isKnighted = true;
-		}
-		if(this.name.equals("Isaac Newton")) {
-			isKnighted = true;
+		//.getname(name);
+	//	isWoman(isWoman);
+	//	isKnighted(isKnighted);
+		if(name.equals(null)) {
+			
+			if(isWoman==false) {
+				
+				if(isKnighted==false) {
+					
+					return hello;
+				}
+			}
 		}
 		else {
-			isKnighted = false;
+			if(isWoman==true) {
+				
+				if(isKnighted==false) {
+					name = "Austen";
+					return hello + woman + name;
+				}
+			}
+			else if(isWoman==false){
+				if(isKnighted==false) {
+					name = "Orwell";
+					return hello + man +name;
+				}
+				else if(isKnighted == true) {
+					name = "Isaac Newton";
+					return hello + knight + name;
+				}
+			}
 		}
-		return isKnighted;
+		
+		
+		
+		
+		return hello + name;
+				
+
 	}
-	boolean checkisWoman() {
-		  if(this.name.equals("Austen")) {
-			  isWoman = true;
-		  }
-		  else {
-			  isWoman = false;
-		  }
-		return isWoman;
+
+
+	boolean isKnighted(boolean isKnighted) {
+		// TODO Auto-generated method stub
+		if(isKnighted==true) {
+			hello = hello + " Sir";
+			
+		}
+		
+			if(isKnighted == false) {
+			
+			}
+			return isKnighted;
+		
+			
+		
+		
 	}
-	String getname() {
+
+
+	String getname(String name) {
+		return name;
 		// TODO Auto-generated method stub
 		
-		this.name = name;
-		return name;
 	}
-     }
+	boolean isWoman(boolean isWoman) {
+		if(isWoman==true) {
+			hello = hello + " Ms. ";
+			return isWoman;
+		}
+		else if(isWoman==false) {
+			hello = hello + " Mr.";
+			return isWoman;
+		}
+		return isWoman;
+		
+	}
 
-     
-
+	
+}
